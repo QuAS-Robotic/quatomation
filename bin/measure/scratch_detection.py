@@ -50,7 +50,16 @@ def Hu_Moment(cnt):
     return cv2.HuMoments(moment)
 if __name__ == "__main__":
     #detect_scratch(refim = cv2. )
+    """
     if op.is_inside_rect([0,0,900,900],[200,200,700,700]):
         print("TUTTİ")
     else:
         print("nop")
+    """
+    c = 0
+    gap = 10
+    for i in range(0,100):
+        print(c)
+        if c == gap:
+            break
+        c += 1

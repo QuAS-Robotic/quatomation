@@ -208,7 +208,6 @@ class mainmenu_funcs():
         if self.result() == False:
             self.mmo.set_ng(self.gui.okng_btn)
         else: self.mmo.set_ok(self.gui.okng_btn)
-
         self.control(hint="post-process")
         if self.current_image.partno >= len(self.current_image.part): # NEW IMAGE CONDITIONS
             self.imageno+=1
@@ -250,7 +249,7 @@ class mainmenu_funcs():
         return QtGui.QPixmap.fromImage(imread)
     def segmentation (self):
         self.current_image.segmentation()
-
+        self.imageno -= 1
     def show_pic(self,pic):
         cv2.namedWindow("Resim",cv2.WINDOW_NORMAL)
         cv2.resizeWindow("Resim",(pic.shape[1],pic.shape[0]))

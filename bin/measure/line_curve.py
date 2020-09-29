@@ -82,7 +82,7 @@ def LineCurve(picture,hint= None):
         if calculate(line).width() > picture.shape[1] *0.99: # çizgiler filtrelenir.
             #print("BAKILAN KISIM :", a)
             lines.append(line)
-            plotlist.append(calculate(line).trend()[2:])
+            plotlist.append(calculate(line).trend())
         else:
             #print("LAZIM DEĞİL")
             #calculate(line).trend()
