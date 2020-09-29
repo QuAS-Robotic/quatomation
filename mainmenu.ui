@@ -1,0 +1,1538 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1269</width>
+    <height>769</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ImView0.1_beta</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/window_icon/pics/quas.png</normaloff>:/window_icon/pics/quas.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(36, 42, 46);
+border-color: rgb(186, 189, 182);
+color: rgb(186, 189, 182);
+gridline-color: rgb(255, 255, 255);
+alternate-background-color: rgb(92, 53, 102);
+selection-color: rgb(255, 255, 255);
+selection-background-color: rgb(255, 255, 255);
+font: 25 10pt &quot;URW Bookman&quot;;</string>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>30</width>
+    <height>30</height>
+   </size>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>0</y>
+      <width>1011</width>
+      <height>561</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(46, 52, 54);</string>
+    </property>
+    <property name="tabShape">
+     <enum>QTabWidget::Rounded</enum>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <property name="elideMode">
+     <enum>Qt::ElideNone</enum>
+    </property>
+    <property name="usesScrollButtons">
+     <bool>true</bool>
+    </property>
+    <property name="documentMode">
+     <bool>false</bool>
+    </property>
+    <property name="tabsClosable">
+     <bool>false</bool>
+    </property>
+    <property name="movable">
+     <bool>true</bool>
+    </property>
+    <property name="tabBarAutoHide">
+     <bool>false</bool>
+    </property>
+    <widget class="QWidget" name="All">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(26, 36, 39);</string>
+     </property>
+     <attribute name="title">
+      <string>Hepsi</string>
+     </attribute>
+     <widget class="QPushButton" name="import_pic">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>190</y>
+        <width>121</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="whatsThis">
+       <string>donnow</string>
+      </property>
+      <property name="text">
+       <string>Resim Yükle</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="picture_main">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>20</y>
+        <width>591</width>
+        <height>381</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="Line" name="line">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>10</y>
+        <width>5</width>
+        <height>391</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>121</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Ana Resim</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>770</x>
+        <y>0</y>
+        <width>51</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Filtreler</string>
+      </property>
+     </widget>
+     <widget class="Line" name="line_4">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>10</y>
+        <width>895</width>
+        <height>5</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="Line" name="line_5">
+      <property name="geometry">
+       <rect>
+        <x>980</x>
+        <y>10</y>
+        <width>5</width>
+        <height>521</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+     <widget class="Line" name="line_3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>10</y>
+        <width>5</width>
+        <height>401</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+     <widget class="Line" name="line_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>410</y>
+        <width>601</width>
+        <height>5</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="filterpic1">
+      <property name="geometry">
+       <rect>
+        <x>611</x>
+        <y>21</y>
+        <width>172</width>
+        <height>102</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>172</width>
+        <height>102</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>172</width>
+        <height>102</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="filterpic2">
+      <property name="geometry">
+       <rect>
+        <x>789</x>
+        <y>21</y>
+        <width>172</width>
+        <height>102</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>172</width>
+        <height>102</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>172</width>
+        <height>102</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="filterpicname1">
+      <property name="geometry">
+       <rect>
+        <x>611</x>
+        <y>123</y>
+        <width>140</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>140</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>140</width>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(41, 4, 4);</string>
+      </property>
+      <property name="text">
+       <string>filtername</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">filter_button_group</string>
+      </attribute>
+     </widget>
+     <widget class="QPushButton" name="filterpicname2">
+      <property name="geometry">
+       <rect>
+        <x>789</x>
+        <y>123</y>
+        <width>140</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>140</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>140</width>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(41, 4, 4);</string>
+      </property>
+      <property name="text">
+       <string>filtername</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">filter_button_group</string>
+      </attribute>
+     </widget>
+     <widget class="QLabel" name="filterpic3">
+      <property name="geometry">
+       <rect>
+        <x>611</x>
+        <y>148</y>
+        <width>172</width>
+        <height>102</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>172</width>
+        <height>102</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>172</width>
+        <height>102</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="filterpic4">
+      <property name="geometry">
+       <rect>
+        <x>789</x>
+        <y>148</y>
+        <width>172</width>
+        <height>102</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>172</width>
+        <height>102</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>172</width>
+        <height>102</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="filterpicname3">
+      <property name="geometry">
+       <rect>
+        <x>611</x>
+        <y>250</y>
+        <width>140</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>140</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>140</width>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(41, 4, 4);</string>
+      </property>
+      <property name="text">
+       <string>filtername</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">filter_button_group</string>
+      </attribute>
+     </widget>
+     <widget class="QPushButton" name="filterpicname4">
+      <property name="geometry">
+       <rect>
+        <x>789</x>
+        <y>250</y>
+        <width>140</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>140</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>140</width>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(41, 4, 4);</string>
+      </property>
+      <property name="text">
+       <string>filtername</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">filter_button_group</string>
+      </attribute>
+     </widget>
+     <widget class="QLabel" name="filterpic5">
+      <property name="geometry">
+       <rect>
+        <x>611</x>
+        <y>275</y>
+        <width>172</width>
+        <height>102</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>172</width>
+        <height>102</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>172</width>
+        <height>102</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="filterpic6">
+      <property name="geometry">
+       <rect>
+        <x>789</x>
+        <y>275</y>
+        <width>172</width>
+        <height>102</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>172</width>
+        <height>102</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>172</width>
+        <height>102</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="filterpicname5">
+      <property name="geometry">
+       <rect>
+        <x>611</x>
+        <y>377</y>
+        <width>140</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>140</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(41, 4, 4);</string>
+      </property>
+      <property name="text">
+       <string>filtername</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">filter_button_group</string>
+      </attribute>
+     </widget>
+     <widget class="QPushButton" name="filterpicname6">
+      <property name="geometry">
+       <rect>
+        <x>789</x>
+        <y>377</y>
+        <width>140</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>140</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>140</width>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(41, 4, 4);</string>
+      </property>
+      <property name="text">
+       <string>filtername</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">filter_button_group</string>
+      </attribute>
+     </widget>
+     <widget class="QLabel" name="filterpic8">
+      <property name="geometry">
+       <rect>
+        <x>789</x>
+        <y>402</y>
+        <width>172</width>
+        <height>102</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>172</width>
+        <height>102</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>172</width>
+        <height>102</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="filterpicname7">
+      <property name="geometry">
+       <rect>
+        <x>611</x>
+        <y>504</y>
+        <width>140</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>140</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(41, 4, 4);</string>
+      </property>
+      <property name="text">
+       <string>filtername</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">filter_button_group</string>
+      </attribute>
+     </widget>
+     <widget class="QPushButton" name="filterpicname8">
+      <property name="geometry">
+       <rect>
+        <x>789</x>
+        <y>504</y>
+        <width>140</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>140</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>140</width>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(41, 4, 4);</string>
+      </property>
+      <property name="text">
+       <string>filtername</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">filter_button_group</string>
+      </attribute>
+     </widget>
+     <widget class="QLabel" name="filterpic7">
+      <property name="geometry">
+       <rect>
+        <x>611</x>
+        <y>402</y>
+        <width>172</width>
+        <height>102</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>172</width>
+        <height>102</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>172</width>
+        <height>102</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="import_pic_from_cloud">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>230</y>
+        <width>121</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>İçeri Aktar</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>420</y>
+        <width>131</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Resmi Düzenle</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>440</y>
+        <width>158</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QPushButton" name="crop_button">
+         <property name="minimumSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="mouseTracking">
+          <bool>true</bool>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="gui/resources/toolbar.qrc">
+           <normaloff>:/pic_settings/pics/crop.png</normaloff>:/pic_settings/pics/crop.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="rotate_left_button">
+         <property name="minimumSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="gui/resources/toolbar.qrc">
+           <normaloff>:/pic_settings/pics/rotate_left.png</normaloff>:/pic_settings/pics/rotate_left.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="default">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="rotate_right_button">
+         <property name="minimumSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="gui/resources/toolbar.qrc">
+           <normaloff>:/pic_settings/pics/rotate_right.png</normaloff>:/pic_settings/pics/rotate_right.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="launch_camera_btn">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>150</y>
+        <width>121</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="whatsThis">
+       <string>donnow</string>
+      </property>
+      <property name="text">
+       <string>Kameraya Bağlan</string>
+      </property>
+     </widget>
+     <zorder>layoutWidget</zorder>
+     <zorder>filterpic1</zorder>
+     <zorder>filterpic2</zorder>
+     <zorder>filterpicname1</zorder>
+     <zorder>filterpicname2</zorder>
+     <zorder>filterpic3</zorder>
+     <zorder>filterpic4</zorder>
+     <zorder>filterpicname3</zorder>
+     <zorder>filterpicname4</zorder>
+     <zorder>filterpic5</zorder>
+     <zorder>filterpic6</zorder>
+     <zorder>filterpicname5</zorder>
+     <zorder>filterpicname6</zorder>
+     <zorder>filterpic8</zorder>
+     <zorder>filterpicname7</zorder>
+     <zorder>filterpicname8</zorder>
+     <zorder>filterpic7</zorder>
+     <zorder>picture_main</zorder>
+     <zorder>line</zorder>
+     <zorder>label_4</zorder>
+     <zorder>line_4</zorder>
+     <zorder>label_6</zorder>
+     <zorder>line_5</zorder>
+     <zorder>line_3</zorder>
+     <zorder>line_2</zorder>
+     <zorder>import_pic</zorder>
+     <zorder>import_pic_from_cloud</zorder>
+     <zorder>label_2</zorder>
+     <zorder>launch_camera_btn</zorder>
+    </widget>
+   </widget>
+   <widget class="QToolBox" name="toolBox">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>241</width>
+      <height>581</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="filtre_sirasi">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>241</width>
+       <height>517</height>
+      </rect>
+     </property>
+     <attribute name="label">
+      <string>Filtreler</string>
+     </attribute>
+     <widget class="QScrollArea" name="scrollArea_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>231</width>
+        <height>511</height>
+       </rect>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>229</width>
+         <height>509</height>
+        </rect>
+       </property>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>20</y>
+          <width>231</width>
+          <height>491</height>
+         </rect>
+        </property>
+        <layout class="QFormLayout" name="left_panel_filters_layout">
+         <property name="sizeConstraint">
+          <enum>QLayout::SetNoConstraint</enum>
+         </property>
+         <property name="horizontalSpacing">
+          <number>6</number>
+         </property>
+         <property name="verticalSpacing">
+          <number>2</number>
+         </property>
+         <item row="0" column="0" colspan="2">
+          <widget class="QComboBox" name="comboBox">
+           <property name="styleSheet">
+            <string notr="true">selection-background-color: rgb(41, 4, 4);</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>+ Filtre Ekle</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Canny</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Blur</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Bilateral</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QCheckBox" name="checkBox">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>230</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>221</width>
+          <height>19</height>
+         </size>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::RightToLeft</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(46, 52, 54);</string>
+        </property>
+        <property name="text">
+         <string>Gri Filtre Uygulansın mı ?       </string>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>32</width>
+          <height>32</height>
+         </size>
+        </property>
+        <property name="tristate">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="process_steps">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>100</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <attribute name="label">
+      <string>Proses Adımları</string>
+     </attribute>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>241</width>
+        <height>521</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(38, 32, 32);</string>
+      </property>
+      <property name="text">
+       <string>Proses Adımları</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>560</y>
+      <width>581</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="new_measurement">
+       <property name="minimumSize">
+        <size>
+         <width>130</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>130</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>ArrowCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(136, 138, 133);
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Öçüm Yap</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="filter_options">
+       <property name="minimumSize">
+        <size>
+         <width>130</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>130</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(136, 138, 133);
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Ölçüm Ayarları</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="empty">
+       <property name="minimumSize">
+        <size>
+         <width>130</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>130</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(136, 138, 133);
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Yeni Resim</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="settings">
+       <property name="minimumSize">
+        <size>
+         <width>130</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>130</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(136, 138, 133);
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Ayarlar</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>900</x>
+      <y>570</y>
+      <width>271</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ImView |v0.01| Haziran 2020</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1269</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMenu">
+    <property name="geometry">
+     <rect>
+      <x>294</x>
+      <y>172</y>
+      <width>153</width>
+      <height>162</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Menu</string>
+    </property>
+    <widget class="QMenu" name="menuYeni">
+     <property name="title">
+      <string>Yeni</string>
+     </property>
+     <addaction name="separator"/>
+     <addaction name="separator"/>
+     <addaction name="actionPRoje"/>
+     <addaction name="actionResim"/>
+    </widget>
+    <widget class="QMenu" name="menuA">
+     <property name="title">
+      <string>Aç</string>
+     </property>
+     <addaction name="actionLoadProject"/>
+     <addaction name="actionResim_2"/>
+    </widget>
+    <widget class="QMenu" name="menuKaydet">
+     <property name="title">
+      <string>Kaydet</string>
+     </property>
+     <addaction name="menu_toolbar_save_params"/>
+     <addaction name="menu_toolbar_save_meas"/>
+    </widget>
+    <addaction name="menuYeni"/>
+    <addaction name="separator"/>
+    <addaction name="menuA"/>
+    <addaction name="separator"/>
+    <addaction name="menuKaydet"/>
+    <addaction name="actionFarkl_Kaydet"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Düzenle</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuRun">
+    <property name="title">
+     <string>Çalıştır</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuYard_m">
+    <property name="title">
+     <string>Yardım</string>
+    </property>
+   </widget>
+   <addaction name="menuMenu"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuRun"/>
+   <addaction name="menuYard_m"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QDockWidget" name="console">
+   <property name="minimumSize">
+    <size>
+     <width>1227</width>
+     <height>119</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(26, 36, 39);</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_3">
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1221</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <property name="mouseTracking">
+      <bool>true</bool>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1219</width>
+        <height>109</height>
+       </rect>
+      </property>
+      <widget class="QLabel" name="infobox">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>0</y>
+         <width>1221</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>1221</width>
+         <height>51</height>
+        </size>
+       </property>
+       <property name="whatsThis">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(26, 36, 39);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+       </property>
+       <property name="buddy">
+        <cstring>infobox</cstring>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="whatsThis">
+    <string/>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>RightToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="toolbar_new"/>
+   <addaction name="actionLoadProject"/>
+   <addaction name="actionRun"/>
+   <addaction name="actionSave"/>
+   <addaction name="toolbar_plot"/>
+  </widget>
+  <action name="actionPRoje">
+   <property name="text">
+    <string>Proje</string>
+   </property>
+  </action>
+  <action name="actionResim">
+   <property name="text">
+    <string>Resim</string>
+   </property>
+  </action>
+  <action name="actionLoadProject">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/Toolbar/pics/open.png</normaloff>:/Toolbar/pics/open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Proje</string>
+   </property>
+   <property name="whatsThis">
+    <string>Proje Aç</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionResim_2">
+   <property name="text">
+    <string>Resim</string>
+   </property>
+  </action>
+  <action name="actionFarkl_Kaydet">
+   <property name="text">
+    <string>Farklı Kaydet</string>
+   </property>
+  </action>
+  <action name="actionRun">
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../../../.designer/backup/gui/resources/pics/run.png</normaloff>
+     <normalon>:/run/pics/run.png</normalon>../../../../../.designer/backup/gui/resources/pics/run.png</iconset>
+   </property>
+   <property name="text">
+    <string>Run</string>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="whatsThis">
+    <string>Çalıştır</string>
+   </property>
+   <property name="shortcut">
+    <string>F5</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/Toolbar/pics/save.png</normaloff>:/Toolbar/pics/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>save</string>
+   </property>
+   <property name="whatsThis">
+    <string>Kaydet</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="menu_toolbar_save_params">
+   <property name="text">
+    <string>Parametreleri Kaydet</string>
+   </property>
+  </action>
+  <action name="menu_toolbar_save_meas">
+   <property name="text">
+    <string>Ölçüm Bilgilerini Kaydet</string>
+   </property>
+  </action>
+  <action name="toolbar_new">
+   <property name="icon">
+    <iconset resource="gui/resources/toolbar.qrc">
+     <normaloff>:/Toolbar/pics/new.png</normaloff>:/Toolbar/pics/new.png</iconset>
+   </property>
+   <property name="text">
+    <string>Yeni</string>
+   </property>
+  </action>
+  <action name="toolbar_plot">
+   <property name="icon">
+    <iconset resource="gui/resources/toolbar.qrc">
+     <normaloff>:/Toolbar/pics/plot.png</normaloff>:/Toolbar/pics/plot.png</iconset>
+   </property>
+   <property name="text">
+    <string>plot</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>settings</tabstop>
+  <tabstop>new_measurement</tabstop>
+  <tabstop>scrollArea</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>empty</tabstop>
+  <tabstop>filterpicname1</tabstop>
+  <tabstop>filterpicname2</tabstop>
+  <tabstop>filterpicname3</tabstop>
+  <tabstop>filterpicname4</tabstop>
+  <tabstop>filterpicname5</tabstop>
+  <tabstop>filterpicname6</tabstop>
+  <tabstop>filterpicname8</tabstop>
+  <tabstop>filterpicname7</tabstop>
+  <tabstop>import_pic</tabstop>
+  <tabstop>filter_options</tabstop>
+ </tabstops>
+ <resources>
+  <include location="gui/resources/toolbar.qrc"/>
+ </resources>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="filter_button_group"/>
+ </buttongroups>
+</ui>

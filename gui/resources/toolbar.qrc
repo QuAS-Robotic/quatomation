@@ -1,0 +1,34 @@
+<RCC>
+  <qresource prefix="run">
+    <file>pics/run.png</file>
+  </qresource>
+  <qresource prefix="automotion_icons">
+    <file>pics/Arrow_LEFT.png</file>
+    <file>pics/Arrow_right.png</file>
+    <file>pics/Arrow_down.png</file>
+  </qresource>
+  <qresource prefix="window_icon">
+    <file>pics/quas.png</file>
+  </qresource>
+  <qresource prefix="Toolbar">
+    <file>pics/export.png</file>
+    <file>pics/new.png</file>
+    <file>pics/plot.png</file>
+    <file>pics/settings.png</file>
+    <file>pics/open.png</file>
+    <file>pics/save.png</file>
+  </qresource>
+  <qresource prefix="run_down">
+    <file>pics/run_down.png</file>
+  </qresource>
+  <qresource prefix="drawings">
+    <file>pics/line.png</file>
+    <file>pics/rectangle.png</file>
+    <file>pics/circle.png</file>
+  </qresource>
+  <qresource prefix="pic_settings">
+    <file>pics/crop.png</file>
+    <file>pics/rotate_left.png</file>
+    <file>pics/rotate_right.png</file>
+  </qresource>
+</RCC>
