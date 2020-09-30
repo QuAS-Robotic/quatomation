@@ -183,3 +183,29 @@ def color_filter(img,tresh1,tresh2):
     # so when multiplied with original image removes all non-blue regions
     return mask
 
+def detect_black(img):
+
+    indices = []
+    """
+    for i in range (0,55):
+        indices.append(np.where(img==[i]))
+    return indices
+    """
+    row,col = img.shape
+    for i in range(row):
+        for j in range(col):
+            if img[i,j] < 50:
+                indices.append([i,j])
+    return indices
+def remove_shadows(img,indices):
+    for indice in indices:
+        #img[indices[0], indices[1],:] = 255
+        img[indice[0],indice[1]] = 0
+    return img
+
+if __name__ == "__main__":
+    cv2.namedWindow("img",cv2.WINDOW_NORMAL)
+    img = cv2.imread("bla.JPG")
+    img = Gray(img,img)
+    cv2.imshow("img",remove_shadows(img,detect_black(img)))
+    cv2.waitKey(0)

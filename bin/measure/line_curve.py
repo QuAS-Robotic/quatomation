@@ -41,11 +41,12 @@ class Curve_Analysis:
 
     def mouse_move(self, event):
         x, y = event.xdata, event.ydata
-        x = int(x) * gap * 2
+        x = int(x) * gap + 50
         y = self.lines[-1][x, 0, 1]
+        x2 = x + gap
         #x = self.lines[-1][x,0,0]
         try:
-            cv2.line(self.image, (x - gap, y), (x, y), [255, 0, 0], 1)
+            cv2.line(self.image, (x,y), (x2, y), [255, 0, 0], 1)
             cv2.imshow(self.windowname, self.image)
         except Exception as e:
             print(e)
@@ -94,7 +95,6 @@ def LineCurve(picture,hint= None):
             cv2.imshow("Cnt",bos)
             cv2.waitKey(0)
 
-
     global ok
     if ok == True:
         return True, image, plotlist, eq, lines
@@ -134,10 +134,14 @@ class calculate ():
         for i,j in array:
             sumx += i
             sumy += j
-        return sumx/len(array), sumy/len(array)
+        try:
+            return sumx/len(array), sumy/len(array)
+        except ZeroDivisionError:
+            print("0 A BÖLÜNME HATASI")
 
 def trend_track(array,width):
     global gap
+    global ok
     #gap = int(width * 0.133) # ARALIK DEĞERİNİ HESAPLAR
     #gap = 100
     px,py = parse_array(array)
@@ -148,9 +152,7 @@ def trend_track(array,width):
     first_point = False
     arctan = []
     gap_points = []
-    trend_tiny = 0
-    trend_mid = 0
-    trend_high = 0
+    ok = True
     for x, y in zip(px, py):
         if c == gap:
             if first_point == False:
@@ -158,38 +160,24 @@ def trend_track(array,width):
                 gap_points.clear()
                 c = 0
                 first_point = True
-                continue
-            c = 0
-            p2 = calculate(gap_points).avrg()
-            arctan.append(calculate([p1,p2 ]).tan()) # ARCTANLARI HESAPLAYIP LİSTEDE TUTTU
-            p1 = p2
-            if arctan[-1] > 70 :
-                trend_high += 1
-            elif arctan[-1] > 50:
-                trend_mid += 1
-            elif arctan[-1] > 10:
-                trend_tiny += 1
-            if len(arctan) > 1 and arctan[-1] > arctan[-2]:
-                trend_high += 1
-            gap_points.clear()
-            continue
+            else:
+                c = 0
+                p2 = calculate(gap_points).avrg()
+                arctan.append(calculate([p1,p2 ]).tan()) # ARCTANLARI HESAPLAYIP LİSTEDE TUTTU
+                p1 = p2
+                gap_points.clear()
         try:
             if x == gap_points[-1][0]:
                 continue
-        except Exception as e:
-            print(e)
+        except :
+            pass
         gap_points.append([x,y])
         c += 1
+        if len(arctan) > 1 and arctan[-1] > arctan[-2]:
+            ok = False
     #RESULTS
-    global ok
-    ok = True
-    if trend_high > 0:
-        ok = False
-        print("NG ULAA")
-    elif trend_mid > 10:
-        pass
 
-    print("Yüksek tehlike : {}, orta : {}, düşük : {}".format(trend_high,trend_mid,trend_tiny))
+
     print(arctan)
     return arctan
 
@@ -200,9 +188,6 @@ def parse_array(array):
         px.append(array[i,0,0])
         py.append(array[i,0,1])
     return px,py
-
-
-
 
 if __name__ == "__main__":
     os.chdir("..")

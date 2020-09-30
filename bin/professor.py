@@ -1,5 +1,6 @@
 import filters
 import os
+import cv2
 class professor:
     def __init__(self):
         self.filterlist = []
@@ -34,14 +35,15 @@ class professor:
         self.processing_picture = filter.picture
     def run(self):
         self.step = 0
-        #self.temp_image_path = self.pf.copy(path=self.main_image_path, to_path=os.path.join(self.pf.temp,os.path.split(self.main_image_path)[-1]))
         self.temp_image_path = self.main_image
-        if self.gray_filter == True:
-            filters.Gray(path = self.temp_image_path,to_path = self.temp_image_path)
+        #if self.gray_filter == True:
+        self.temp_image_path = filters.Gray(path = self.temp_image_path,to_path = self.temp_image_path)
+            #self.shadows = filters.detect_black(self.temp_image_path)
         for filter in self.filterlist:
             self.findfilter(filter = filter,fname = filter.name,params = filter.params) #0->PARA1 1->PARA2
             self.step += 1
         self.output_image_path = self.processing_picture
+        #self.output_image = filters.remove_shadows(self.output_image,self.shadows)
         return self.output_image
     def select_ROI(self,image,hint = ""):
         return filters.selectROI(image,hint)

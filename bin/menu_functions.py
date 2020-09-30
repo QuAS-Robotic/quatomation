@@ -199,7 +199,7 @@ class mainmenu_funcs():
         self.gui.part_name_lbl.setText("PARÇA ADI: "+self.image_names[self.imageno].upper()+"--"+ str(self.current_image.partno))
         if self.scratch == True:
             scratch_detection = DetectScratch(self.professor.run(),roi = self.scratch_roi)
-            self.result = ScratchAnalysis(self.current_image.name,*scratch_detection)
+            self.result = ScratchAnalysis(self.current_image.name,self.current_image(),*scratch_detection)
         else:
             curve_analysis = LineCurve(self.professor.run())
             self.result = Curve_Analysis(self.current_image.name, *curve_analysis)
