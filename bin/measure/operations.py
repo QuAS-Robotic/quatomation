@@ -45,7 +45,7 @@ def get_contours(pic,hint= None):
 
 def is_inside_rect(outer,inner,hint = None):
     if outer[0] <= inner[0] and outer[1] <= inner[1] and outer[0] + outer[2] >= inner[0] + inner[2] and outer[1]+ outer[3]\
-        >= inner[1] + inner[3]: return True # xo > xi , yo < yi, xo+wo > xi + wi , yo + h0 < yi + hi
+        >= inner[1] + inner[3]: return True # xo <= xi , yo <= yi, xo+wo > xi + wi , yo + h0 < yi + hi
 
     else:
         return  False

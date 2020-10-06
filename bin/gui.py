@@ -17,7 +17,6 @@ import qcamera
 import json
 import numpy as np
 import qimage2ndarray
-from cloud_ import firebase
 pf = program_files("bin/appdb")
 import cv2
 from work_piece import work_piece

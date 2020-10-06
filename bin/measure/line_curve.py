@@ -1,11 +1,6 @@
-from scipy.spatial import distance as dist
-from imutils import perspective
-from imutils import contours
 import numpy as np
 import matplotlib.pyplot as plt
-import math
 import os
-import imutils
 import cv2
 from operations import apply_canny,get_contours
 global ok

@@ -20,7 +20,6 @@ from cloud_ import firebase
 pf = program_files("bin/appdb")
 import cv2
 import gui
-import qimage2ndarray
 from threading import Thread
 from work_piece import work_piece
 class mainmenu_funcs():
@@ -257,4 +256,5 @@ class mainmenu_funcs():
 
     def scratch_detection (self,):
         self.scratch = True
+        self.imageno -=1
         self.scratch_roi = self.professor.select_ROI(self.current_image())

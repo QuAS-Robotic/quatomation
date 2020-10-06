@@ -1,3 +1,11 @@
+class firebase:
+    def __init__(self):
+        pass
+class waterbase:
+    def __init__(self):
+        pass
+
+"""
 import pyrebase
 import os
 class firebase:
@@ -52,3 +60,4 @@ class waterbase:
         return
     def sign(self,*args,**kwargs):
         return
+"""

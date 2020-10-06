@@ -49,6 +49,7 @@ def DetectScratch (im,refim = None,hint = None,roi = None): # refim : ref image
     for c in im_cnts:
         #moments.append(Hu_Moment(c))
         for r in roi:
+            print(r)
             if op.is_inside_rect(outer = r,inner = cv2.boundingRect(c)):
                 flag = False
                 scratchs.append(c)
