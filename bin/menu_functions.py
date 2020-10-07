@@ -37,7 +37,7 @@ class mainmenu_funcs():
         self.save_file = None
         self.images = []
         self.image_names = []
-        self.imageno = -1
+        self.imageno = 0
         self.scratch = False # TODO: Kaldır, geçici bir çözüm bu
     def load_gui (self,gui,app,wdg,log,proc):
         self.gui = gui
@@ -53,13 +53,15 @@ class mainmenu_funcs():
 
         self.gui.actionPRoje.triggered.connect(self.reset_all)
         self.gui.toolbar_plot.triggered.connect(self.analysis_)
+        self.gui.next_object_btn.clicked.connect(self.next_object)
+        self.gui.next_part_btn.clicked.connect(self.next_part)
+        self.gui.apply_filters_btn.clicked.connect(self.apply_filters)
         self.app = app
         self.widget = wdg
         self.mmo.load_gui(self.gui)
         self.pictures()
         self.professor = proc
         self.professor.pf = pf
-        self.control()
 
     def emp(self):
         print(self.settings.values())
@@ -92,29 +94,12 @@ class mainmenu_funcs():
     def control(self,hint=None):
         if self.professor.filterlist == [] or self.images == []: self.gate = False
         else: self.gate = True
-        """
-        for filter_ in self.mmo.gui_filters.op_filters.values():
-            if self.s_main_image == None:
-                break
-            if filter_.picture is None and  self.main_pic is not None:
-                filter_.picture = self.professor.main_image
-        
-        
-        if hint == "filter":
-            self.professor.filterlist = []
-            if self.gui.checkBox.checkState() == 2:
-                self.professor.gray_filter = True
-            else:
-                self.professor.gray_filter = False
+        self.current_image = self.images[self.imageno]
+        self.set_pic(self.gui.pre_pro_output_btn, self.current_image())
+        self.professor.main_image = self.current_image()
+        self.gui.part_name_lbl.setText(
+            "PARÇA ADI: " + self.image_names[self.imageno].upper() + "--" + str(self.current_image.partno))
 
-            for filter in self.mmo.gui_filters.op_filters.values():
-                self.professor.filterlist.append(filter)
-            return
-        if hint == "post-process":
-            self.output_image = self.professor.output_image
-        elif hint == "update_pics": pass
-        #self.professor.filterlist = []
-        """
 #**********************************  MAIN TAB FUNCS  ******************************
     def import_image_processing(self):
         gui.load_project(self)
@@ -183,19 +168,24 @@ class mainmenu_funcs():
         self.set_pic(self.gui.picture_main,self.professor.main_image)
         self.s_main_image = True
         self.control()
-
-    def run(self):
-        if self.imageno == len(self.images):
-            print("RESİMLER BİTTİ")
+    def next_object(self):
+        if self.imageno == len(self.images)-1:
+            print("TAMAMLANDI")
             return
+        else:
+            self.imageno += 1
+            self.control()
+
+    def next_part(self):
+        self.current_image.next_part()
+        self.control()
+    def apply_filters(self):
+        self.professor.run()
+        self.set_pic(self.gui.image_proc_btn, self.professor.output_image)
+    def run(self):
         self.control()
         if not self.gate == True:
             self.test_run()
-        self.current_image = self.images[self.imageno]
-        self.set_pic(self.gui.input_image_btn, self.current_image.image)
-        self.set_pic(self.gui.pre_pro_output_btn,self.current_image())
-        self.professor.main_image = self.current_image()
-        self.gui.part_name_lbl.setText("PARÇA ADI: "+self.image_names[self.imageno].upper()+"--"+ str(self.current_image.partno))
         if self.scratch == True:
             scratch_detection = DetectScratch(self.professor.run(),roi = self.scratch_roi)
             self.result = ScratchAnalysis(self.current_image.name,self.current_image(),*scratch_detection)
@@ -208,14 +198,8 @@ class mainmenu_funcs():
             self.mmo.set_ng(self.gui.okng_btn)
         else: self.mmo.set_ok(self.gui.okng_btn)
         self.control(hint="post-process")
-        if self.current_image.partno >= len(self.current_image.part): # NEW IMAGE CONDITIONS
-            self.imageno+=1
-        else:
-            self.current_image.partno += 1
-
     def next_step (self):
-        self.imageno += 1
-
+        pass
     def test_run(self):
         self.save_file = '/home/ogibalboa/Desktop/PICTURES'
         self.import_image_processing()
@@ -248,7 +232,7 @@ class mainmenu_funcs():
         return QtGui.QPixmap.fromImage(imread)
     def segmentation (self):
         self.current_image.segmentation()
-        self.imageno -= 1
+        self.control()
     def show_pic(self,pic):
         cv2.namedWindow("Resim",cv2.WINDOW_NORMAL)
         cv2.resizeWindow("Resim",(pic.shape[1],pic.shape[0]))
@@ -256,5 +240,4 @@ class mainmenu_funcs():
 
     def scratch_detection (self,):
         self.scratch = True
-        self.imageno -=1
         self.scratch_roi = self.professor.select_ROI(self.current_image())

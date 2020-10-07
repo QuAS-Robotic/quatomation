@@ -11,9 +11,12 @@ class work_piece:
             if arg == "reset_partno":
                 self.partno = 0
         if len(self.part) < 1: return self.image
-        else: return self.part[self.partno-1]
+        else: return self.part[self.partno]
 
-
+    def next_part(self):
+        if len(self.part) == self.partno+1:
+            return
+        else: self.partno += 1
     def segmentation (self, x = 1000, y = 500):
         image = self.image.copy()
         temp = image.copy()

@@ -53,7 +53,7 @@ class gui_log:
         self.info +="\nTarih : | " + str(datetime.now().replace(second=0,microsecond=0))[0:-3] + " | : "
         for i in args:
             self.info += str(i)
-        self.gui.infobox.setText(self.info)
+
 
 class messagebox:
     def __init__(self,gui):
