@@ -203,7 +203,7 @@ font: 25 14pt &quot;URW Bookman&quot;;</string>
       <item>
        <widget class="QPushButton" name="pushButton">
         <property name="text">
-         <string>Canny Filtreleme</string>
+         <string>Segmentasyon</string>
         </property>
        </widget>
       </item>
@@ -234,7 +234,7 @@ font: 25 14pt &quot;URW Bookman&quot;;</string>
        <x>20</x>
        <y>10</y>
        <width>161</width>
-       <height>62</height>
+       <height>94</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="analyse_layout">
@@ -251,6 +251,13 @@ font: 25 14pt &quot;URW Bookman&quot;;</string>
          <widget class="QPushButton" name="scratch_detection_btn">
           <property name="text">
            <string>Çizik Analizi</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="mark_detection_btn">
+          <property name="text">
+           <string>Marka Analizi</string>
           </property>
          </widget>
         </item>
@@ -636,6 +643,25 @@ font: 25 14pt &quot;URW Bookman&quot;;</string>
      <string>Sıradaki Bölge</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_16">
+    <property name="geometry">
+     <rect>
+      <x>780</x>
+      <y>510</y>
+      <width>61</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../qimplementor/gui/resources/toolbar.qrc">:/automotion_icons/pics/Arrow_LEFT.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
    <zorder>label_9</zorder>
    <zorder>label_7</zorder>
    <zorder>label_4</zorder>
@@ -667,6 +693,7 @@ font: 25 14pt &quot;URW Bookman&quot;;</string>
    <zorder>next_part_btn</zorder>
    <zorder>label</zorder>
    <zorder>label_5</zorder>
+   <zorder>label_16</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

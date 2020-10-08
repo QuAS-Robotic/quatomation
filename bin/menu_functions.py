@@ -55,6 +55,7 @@ class mainmenu_funcs():
         self.gui.toolbar_plot.triggered.connect(self.analysis_)
         self.gui.next_object_btn.clicked.connect(self.next_object)
         self.gui.next_part_btn.clicked.connect(self.next_part)
+        self.gui.mark_detection_btn.clicked.connect(self.mark_detection)
         self.gui.apply_filters_btn.clicked.connect(self.apply_filters)
         self.app = app
         self.widget = wdg
@@ -91,6 +92,7 @@ class mainmenu_funcs():
         self.control()
     def status(self, hint=None, var=None, action=None):
         return
+
     def control(self,hint=None):
         if self.professor.filterlist == [] or self.images == []: self.gate = False
         else: self.gate = True
@@ -241,3 +243,6 @@ class mainmenu_funcs():
     def scratch_detection (self,):
         self.scratch = True
         self.scratch_roi = self.professor.select_ROI(self.current_image())
+
+    def mark_detection(self):
+        return
