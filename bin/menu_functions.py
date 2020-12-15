@@ -5,7 +5,7 @@ from program_files import program_files
 from log import printlog,errorlog
 from menu_objects import mainmenu_objects,filter
 from menu_layouts import left_panel_buttons,confirmation_dialog,\
-    measure_settings,show_image,crop_image_layout
+    measure_settings,show_image,crop_image_layout,CameraSettings
 from log import gui_log,errorlog
 from measure import hole_analysis
 global pf
@@ -39,11 +39,13 @@ class mainmenu_funcs():
         self.image_names = []
         self.imageno = 0
         self.scratch = False # TODO: Kaldır, geçici bir çözüm bu
+
     def load_gui (self,gui,app,wdg,log,proc):
         self.gui = gui
         self.log = log
         self.log.gui = self.gui
-
+        self.camera = qcamera.QCamera(self, QtCore.QTimer(self.gui))
+        self.CameraSettings = CameraSettings(self)
         self.gui.actionRun.triggered.connect(lambda: LineCurve(picture =
                                                                  self.professor.output_image,
                                                                  width = self.settings["width"]))
@@ -57,6 +59,7 @@ class mainmenu_funcs():
         self.gui.next_part_btn.clicked.connect(self.next_part)
         self.gui.mark_detection_btn.clicked.connect(self.mark_detection)
         self.gui.apply_filters_btn.clicked.connect(self.apply_filters)
+        self.gui.camera_settings_btn.clicked.connect(self.camera_settings)
         self.app = app
         self.widget = wdg
         self.mmo.load_gui(self.gui)
@@ -94,7 +97,7 @@ class mainmenu_funcs():
         return
 
     def control(self,hint=None):
-        if self.professor.filterlist == [] or self.images == []: self.gate = False
+        if self.professor.filterlist == [] or self.images == []:  self.gate = False
         else: self.gate = True
         self.current_image = self.images[self.imageno]
         self.set_pic(self.gui.pre_pro_output_btn, self.current_image())
@@ -246,3 +249,11 @@ class mainmenu_funcs():
 
     def mark_detection(self):
         return
+
+    def camera_settings(self):
+        if self.camera() == False:
+            self.camera.start()
+            self.camera.launch()
+            return
+        else:
+            self.CameraSettings.show()

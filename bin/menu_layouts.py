@@ -1,4 +1,4 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore, QtGui, QtWidgets,uic
 from PyQt5.QtWidgets import QMessageBox
 
 import sys
@@ -200,3 +200,12 @@ def crop_image_layout(gui,image):
     popup = crop_pp(gui,image)
     popup.show()
 
+class CameraSettings(QtWidgets.QDialog):
+    def __init__(self,main):
+        super(CameraSettings, self).__init__()
+        uic.loadUi('gui/camera_settings.ui', self)
+        self.new_photo_btn.clicked.connect(main.camera.launch)
+        self.open_cam_btn.clicked.connect(main.camera.start)
+        self.close_cam_btn.clicked.connect(main.camera.stop)
+        self.fps_box.valueChanged.connect(main.camera.setfps)
+        QtWidgets.QSpinBox.valueChanged

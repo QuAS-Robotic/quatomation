@@ -2,6 +2,7 @@ import sys
 import os
 sys.path.append("bin")
 sys.path.append("bin/measure")
+sys.path.append("bin/professor")
 
 import toolbar_rc
 from PyQt5 import QtCore, QtGui, QtWidgets,uic
@@ -17,7 +18,7 @@ mmo = mainmenu_objects()
 def version_control():
     app_version = "0.1"
     version_info = ""
-    return app_version,version_info
+    return app_version, version_info
 class mainwin(QtWidgets.QMainWindow):
     def __init__(self,):
         super(mainwin, self).__init__()
@@ -45,8 +46,8 @@ if __name__ == "__main__":
     app.setStyle("fusion")
     info = "Hoş Geldiniz ! \nUygulama Sürümü : " + version_control()[0] + "\n"
     log(info)
-    process = professor()
-    mmf.load_gui(gui=ui,app=app,wdg=MainWindow,log = log,proc = process) # load class features to mm func module
+    process = professor.professor()
+    mmf.load_gui(gui=ui, app=app, wdg=MainWindow, log=log, proc=process) # load class features to mm func module
     mmo.load_gui(ui) # load class gui to menu objects
     ui.show()
     sys.exit(app.exec_())

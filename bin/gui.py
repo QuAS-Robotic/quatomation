@@ -21,14 +21,18 @@ pf = program_files("bin/appdb")
 import cv2
 from work_piece import work_piece
 def _import_pic(self):
-    path_to_images = QFileDialog.getExistingDirectory(self.widget, 'Projeyi içeren dosyayı seçiniz:',
-                                                      '', QFileDialog.ShowDirsOnly)
-    if path_to_images == "":
-        return
-    images = program_files().get_filenames(target = path_to_images,type = ".JPG")
-    for image in images:
-        self.image_names.append(image)
-        self.images.append(work_piece(cv2.rotate(cv2.imread(os.path.join(path_to_images,image)),cv2.ROTATE_90_COUNTERCLOCKWISE),name = image))
+    if self.camera() != False:
+        self.image_names.append("Kamera Deneme")
+        self.images.append(work_piece(self.camera.capture(),name= "Kamera Deneme"))
+    else:
+        path_to_images = QFileDialog.getExistingDirectory(self.widget, 'Projeyi içeren dosyayı seçiniz:',
+                                                          '', QFileDialog.ShowDirsOnly)
+        if path_to_images == "":
+            return
+        images = program_files().get_filenames(target = path_to_images,type = ".JPG")
+        for image in images:
+            self.image_names.append(image)
+            self.images.append(work_piece(cv2.rotate(cv2.imread(os.path.join(path_to_images,image)),cv2.ROTATE_90_COUNTERCLOCKWISE),name = image))
     self.current_image = self.images[0]
     self.set_pic(self.gui.input_image_btn,self.current_image.image)
     self.s_main_image = True

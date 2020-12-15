@@ -295,7 +295,7 @@ font: 25 14pt &quot;URW Bookman&quot;;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(164, 0, 0);
+     <string notr="true">background-color: rgb(112, 63, 17);
 font: 25 14pt &quot;URW Bookman&quot;;</string>
     </property>
     <property name="text">
@@ -662,6 +662,50 @@ font: 25 14pt &quot;URW Bookman&quot;;</string>
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QPushButton" name="camera_settings_btn">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>230</y>
+      <width>81</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(164, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string>Kamera</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>60</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_17">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>230</y>
+      <width>61</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../qimplementor/gui/resources/toolbar.qrc">:/automotion_icons/pics/Arrow_right.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
    <zorder>label_9</zorder>
    <zorder>label_7</zorder>
    <zorder>label_4</zorder>
@@ -694,6 +738,8 @@ font: 25 14pt &quot;URW Bookman&quot;;</string>
    <zorder>label</zorder>
    <zorder>label_5</zorder>
    <zorder>label_16</zorder>
+   <zorder>camera_settings_btn</zorder>
+   <zorder>label_17</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

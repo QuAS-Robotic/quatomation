@@ -18,6 +18,7 @@ class work_piece:
             return
         else: self.partno += 1
     def segmentation (self, x = 1000, y = 500):
+        print("girdum")
         image = self.image.copy()
         temp = image.copy()
         global k
